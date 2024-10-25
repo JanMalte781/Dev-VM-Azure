@@ -51,7 +51,7 @@ resource "azurerm_network_security_rule" "dev-dev-allow" {
   protocol                    = "*"
   source_port_range           = "*"
   destination_port_range      = "*"
-  source_address_prefix       = "*"
+  source_address_prefix       = "${var.ownIP}"
   destination_address_prefix  = "*"
   resource_group_name         = azurerm_resource_group.dev-rg.name
   network_security_group_name = azurerm_network_security_group.dev-sg.name
